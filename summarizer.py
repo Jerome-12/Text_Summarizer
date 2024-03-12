@@ -8,7 +8,7 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 nltk.download('stopwords')
 nltk.download('punkt')
 
-st.title('Text Summarizer')
+st.title(':violet[Text Summarizer]')
 
 # Input text - to summarize 
 text = st.text_input('Enter the text')
@@ -51,7 +51,11 @@ for sentence in sentenceValue:
 
 # Average value of a sentence from the original text 
 
-average = int(sumValues / len(sentenceValue)) 
+try:
+   average = int(sumValues / len(sentenceValue)) 
+
+except ZeroDivisionError:
+   pass
 
 # Storing sentences into our summary. 
 summary = '' 
